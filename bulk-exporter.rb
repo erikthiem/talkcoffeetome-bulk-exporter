@@ -59,19 +59,19 @@ def write_output_file(board_markdowns, output_file)
 end
 
 puts "Paste your TalkCoffeeToMe '_leancoffee_key' cookie below:"
-TALKCOFFEE_COOKIE = gets.chomp
+talkcoffee_cookie = gets.chomp
 
 puts "Output file:"
-OUTPUT_FILE = gets.chomp
+output_file = gets.chomp
 
-raw_html = talkcoffee_boards_html(TALKCOFFEE_COOKIE)
+raw_html = talkcoffee_boards_html(talkcoffee_cookie)
 puts "Successfully authenticated with TalkCoffeeToMe!"
 
 board_ids = get_board_ids(raw_html)
 puts "Successfully found #{board_ids.count} TalkCoffeeToMe boards!"
 
-board_markdowns = get_board_markdowns(board_ids, TALKCOFFEE_COOKIE)
+board_markdowns = get_board_markdowns(board_ids, talkcoffee_cookie)
 puts "Successfully downloaded #{board_markdowns.count} TalkCoffeeToMe boards!"
 
-write_output_file(board_markdowns, OUTPUT_FILE)
-puts "Successfully exported boards to #{OUTPUT_FILE}!"
+write_output_file(board_markdowns, output_file)
+puts "Successfully exported boards to #{output_file}!"
