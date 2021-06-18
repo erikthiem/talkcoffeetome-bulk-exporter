@@ -59,8 +59,11 @@ def write_output_file(board_markdowns, output_file)
   file.close
 end
 
-TALKCOFFEE_COOKIE = "PUT_COOKIE_HERE"
-OUTPUT_FILE = "out.txt"
+puts "Paste your TalkCoffeeToMe '_leancoffee_key' cookie below:"
+TALKCOFFEE_COOKIE = gets.chomp
+
+puts "Output file:"
+OUTPUT_FILE = gets.chomp
 
 raw_html = talkcoffee_boards_html(TALKCOFFEE_COOKIE)
 puts "Successfully authenticated with TalkCoffeeToMe!"
