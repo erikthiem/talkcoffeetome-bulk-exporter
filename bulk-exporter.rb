@@ -1,7 +1,6 @@
 require "uri"
 require "net/http"
 require "nokogiri"
-require "pry"
 
 def talkcoffee_boards_html(talkcoffee_cookie)
   url = URI("https://talkcoffeeto.me/discussion/boards")
